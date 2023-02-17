@@ -15,7 +15,8 @@ import { Post } from './../app.component';
 export class PostFormComponent {
 	@Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>();
 
-	@ViewChild('titleInput') inputRef!: ElementRef;
+	@ViewChild('titleInput') titleRef!: ElementRef;
+	@ViewChild('textInput') textRef!: ElementRef;
 
 	title: string = '';
 	text: string = '';
@@ -28,9 +29,11 @@ export class PostFormComponent {
 			};
 			this.onAdd.emit(post);
 		}
+		this.textRef.nativeElement.value = '';
+		this.titleRef.nativeElement.value = '';
 	};
 
 	focusInput = () => {
-		this.inputRef.nativeElement.focus();
+		this.titleRef.nativeElement.focus();
 	};
 }

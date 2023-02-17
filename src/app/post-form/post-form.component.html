@@ -15,6 +15,7 @@
 		id=""
 		placeholder="Text..."
 		[(ngModel)]="text"
+		#textInput
 	/>
 	<button class="btn" (click)="addPost()">Add post</button>
 	<button class="btn" (click)="focusInput()">focus on title</button>
