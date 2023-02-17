@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,7 +9,7 @@ import { PostFormComponent } from './post-form/post-form.component';
 
 @NgModule({
 	declarations: [AppComponent, PostComponent, PostFormComponent],
-	imports: [BrowserModule, AppRoutingModule],
+	imports: [BrowserModule, AppRoutingModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
