@@ -4,12 +4,15 @@
 	<app-post-form (onAdd)="updPosts($event)"></app-post-form>
 
 	<hr />
-	<!-- prettier-ignore -->
 	<app-post *ngFor="let p of posts" [post]="p">
-		<small *ngIf="p.text.length > 10; else short">post is too long</small>
-		<ng-template #short>
-			<small>post is too short</small>
-		</ng-template>
+		<div #info>
+			<small *ngIf="p.text.length > 10; else short"
+				>post is too long</small
+			>
+			<ng-template #short>
+				<small>post is too short</small>
+			</ng-template>
+		</div>
 	</app-post>
 </div>
 <router-outlet></router-outlet>
